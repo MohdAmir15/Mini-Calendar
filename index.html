@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="calendar">
+            <div class="left">
+                <p id="date">01</p>
+                <p id="day">Sunday</p>
+            </div>
+            <div class="right">
+                <p id="month">January</p>
+                <p id="year">2025</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const date = document.getElementById('date');
+        const day = document.getElementById('day');
+        const month = document.getElementById('month');
+        const year = document.getElementById('year');
+
+        const today = new Date();
+
+        //need to create arrays as days and months will be displayed as index 0-nth by default
+        const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const allMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+
+        date.innerText = (today.getDate()<10? "0": "") + today.getDate(); //display date in two digits
+        day.innerText = weekDays[today.getDay()];
+        month.innerText = allMonths[today.getMonth()];
+        year.innerText = today.getFullYear();
+        
+    </script>
+
+</body>
+</html>
